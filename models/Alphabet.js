@@ -5,9 +5,9 @@ const Alphabet = new Schema({
     English : String,
     German : String,
     Image : String,
-    Marathiname: String,
-    Englishname : String,
-    Germanname : String,
+    MarathiName: String,
+    EnglishName : String,
+    GermanName : String,
    
     languageId : {
         type: mongoose.Schema.Types.ObjectId, ref : 'Language'

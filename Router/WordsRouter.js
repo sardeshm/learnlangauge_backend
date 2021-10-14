@@ -7,7 +7,7 @@ const Word = require('../models/Words')
 WordsRouter.get('/',(req, res) => {
   Word
   .find()
-  .populate('UserId')
+  
   .then(data => res.json(data))
   .catch(err => res.json(err))
 });

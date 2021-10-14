@@ -2,15 +2,12 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const WholeNumber = new Schema({
     
-    Englishnumber : Number,
+    EnglishNumber : Number,
     Marathi : String,
-    Marathipronunciation: String,
-    Englishpronounciation : String,
-    Germanpronounciation : String,
-    NumberId : {
-        type: mongoose.Schema.Types.ObjectId, ref : 'Number'
-
-    }
+    MarathiPronunciation: String,
+    EnglishPronunciation : String,
+    GermanPronunciation : String
+    
 
 })
 
