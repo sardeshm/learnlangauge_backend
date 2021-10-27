@@ -7,7 +7,26 @@ const Alphabet = require('../models/Alphabet')
 AlphabetRouter.get('/',(req, res) => {
   Alphabet
   .find()
-  .populate('languageId')
+  .then(data => res.json(data))
+  .catch(err => res.json(err))
+});
+
+AlphabetRouter.get('/vowels',(req, res) => {
+  Alphabet
+  .find({Type: "Vowels"})
+  .then(data => res.json(data))
+  .catch(err => res.json(err))
+});
+AlphabetRouter.get('/consonants',(req, res) => {
+  Alphabet
+  .find({Type: "Consonants"})
+  .then(data => res.json(data))
+  .catch(err => res.json(err))
+});
+
+AlphabetRouter.get('/:id',(req, res) => {
+  Alphabet
+  .findById(req.params.id) //findOne({ _id: req.params.id }
   .then(data => res.json(data))
   .catch(err => res.json(err))
 });

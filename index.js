@@ -1,11 +1,17 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 const mongoose = require('mongoose')
-require('dotenv').config()
 
+const cors = require("cors");
+
+app.use(cors());
 const AlphabetRouter = require('./Router/AlphabetRouter')
 const WholeNumberRouter = require ('./Router/WholeNumberRouter')
+
+console.log(WholeNumberRouter)
+
 const WordsRouter = require ('./Router/WordsRouter')
 
  app.use(express.json())
@@ -19,6 +25,7 @@ app.get ('/', (req, res) => {
 
 
 app.use('/alphabets', AlphabetRouter)
+
 app.use('/wholenumbers', WholeNumberRouter)
 app.use('/words', WordsRouter)
 

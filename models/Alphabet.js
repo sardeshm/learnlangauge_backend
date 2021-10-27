@@ -8,12 +8,11 @@ const Alphabet = new Schema({
     MarathiName: String,
     EnglishName : String,
     GermanName : String,
+    Type : String
+    })
    
-    languageId : {
-        type: mongoose.Schema.Types.ObjectId, ref : 'Language'
+    
 
-    }
 
-})
 
 module.exports = mongoose.model('Alphabet', Alphabet)
