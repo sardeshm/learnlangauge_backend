@@ -1,18 +1,15 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const Alphabet = new Schema({
-    Marathi : String,
-    English : String,
-    German : String,
-    Image : String,
-    MarathiName: String,
-    EnglishName : String,
-    GermanName : String,
-    Type : String
-    })
-   
-    
+  Marathi: String,
+  English: String,
+  German: String,
+  Image: String,
+  MarathiName: String,
+  EnglishName: String,
+  GermanName: String,
+  Type: String,
+  canvasImage: String,
+});
 
-
-
-module.exports = mongoose.model('Alphabet', Alphabet)
+module.exports = mongoose.model("Alphabet", Alphabet);
