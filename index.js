@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose");
 //const transporter = require("./middleware/transporter");
 const cors = require("cors");
