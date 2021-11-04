@@ -1,29 +1,30 @@
-const express = require("express");
-const TransporterRouter = express.Router();
-TransporterRouter.use(express.json());
-TransporterRouter.use(express.urlencoded());
+// const express = require("express");
+// const TransporterRouter = express.Router();
+// TransporterRouter.use(express.json());
+// TransporterRouter.use(express.urlencoded());
+// const transporter = express.Router();
 
-TransporterRouter.post("/", (req, res) => {
-  console.log(req.body);
-  let mailOptions = {
-    from: `${req.body.mailerState.email}`,
-    to: process.env.EMAIL,
-    subject: `Message from: ${req.body.mailerState.email}`,
-    text: `${req.body.mailerState.message}`,
-  };
+// TransporterRouter.post("/", (req, res) => {
+//   console.log(req.body);
+//   let mailOptions = {
+//     from: `${req.body.email}`,
+//     to: process.env.EMAIL,
+//     subject: `Message from: ${req.body.email}`,
+//     text: `${req.body.message}`,
+//   };
 
-  Transporter.sendMail(mailOptions, function (err, data) {
-    if (err) {
-      res.json({
-        status: "fail",
-      });
-    } else {
-      console.log("== Message Sent ==");
-      res.json({
-        status: "success",
-      });
-    }
-  });
-});
+//   transporter.sendMail(mailOptions, function (err, data) {
+//     if (err) {
+//       res.json({
+//         status: "fail",
+//       });
+//     } else {
+//       console.log("== Message Sent ==");
+//       res.json({
+//         status: "success",
+//       });
+//     }
+//   });
+// });
 
-module.exports = TransporterRouter;
+// module.exports = TransporterRouter;
